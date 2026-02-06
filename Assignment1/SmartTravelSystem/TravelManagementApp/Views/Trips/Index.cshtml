@@ -1,0 +1,63 @@
+@model IEnumerable<TravelDataAccess.Models.Trip>
+
+@{
+    ViewData["Title"] = "Trip List";
+}
+
+<h2>Trip List</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (Context.Session.GetString("CustomerRole") == "Admin")
+{
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New Trip</a>
+    </p>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Destination</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Code</td>
+                <td>@item.Destination</td>
+                <td>$@item.Price.ToString("N2")</td>
+                <td>
+                    @if (item.Status == "Available")
+                    {
+                        <span class="badge bg-success">@item.Status</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">@item.Status</span>
+                    }
+                </td>
+                <td>
+                    @if (Context.Session.GetString("CustomerRole") == "Admin")
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.TripId" class="btn btn-sm btn-warning">Edit</a>
+                    }
+                    else
+                    {
+                        <span class="text-muted">View Only</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

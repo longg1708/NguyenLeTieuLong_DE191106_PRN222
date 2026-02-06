@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|e:\\sem7\\prn222\\code\\smarttravelsystem\\travelmanagementapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|solutionrelative:travelmanagementapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|e:\\sem7\\prn222\\code\\smarttravelsystem\\travelmanagementapp\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|solutionrelative:travelmanagementapp\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|e:\\sem7\\prn222\\code\\smarttravelsystem\\travelmanagementapp\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|solutionrelative:travelmanagementapp\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|e:\\sem7\\prn222\\code\\smarttravelsystem\\travelmanagementapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|solutionrelative:travelmanagementapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|e:\\sem7\\prn222\\code\\smarttravelsystem\\travelmanagementapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C41ADC5F-D4EC-4973-A0D2-B38B05D68E0D}|TravelManagementApp\\TravelManagementApp.csproj|solutionrelative:travelmanagementapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 17,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:27:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:29:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:26:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:29:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:43:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "TravelManagementApp\\Views\\Login\\Index.cshtml",
+              "ToolTip": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "TravelManagementApp\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAB8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-05T13:18:25.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "TravelManagementApp\\Views\\_ViewStart.cshtml",
+              "ToolTip": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "TravelManagementApp\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-05T13:17:57.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\Program.cs",
+              "RelativeDocumentMoniker": "TravelManagementApp\\Program.cs",
+              "ToolTip": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\Program.cs",
+              "RelativeToolTip": "TravelManagementApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T13:17:42.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\appsettings.json",
+              "RelativeDocumentMoniker": "TravelManagementApp\\appsettings.json",
+              "ToolTip": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\appsettings.json",
+              "RelativeToolTip": "TravelManagementApp\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-04T07:32:15.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "TravelManagementApp\\Views\\_ViewImports.cshtml",
+              "ToolTip": "E:\\Sem7\\PRN222\\Code\\SmartTravelSystem\\TravelManagementApp\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "TravelManagementApp\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-04T07:07:10.671Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

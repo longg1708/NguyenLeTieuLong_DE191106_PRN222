@@ -1,0 +1,12 @@
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\bin\Debug\net8.0\TravelDataAccess.deps.json
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\bin\Debug\net8.0\TravelDataAccess.dll
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\bin\Debug\net8.0\TravelDataAccess.pdb
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\obj\Debug\net8.0\TravelDataAccess.csproj.AssemblyReference.cache
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\obj\Debug\net8.0\TravelDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\obj\Debug\net8.0\TravelDataAccess.AssemblyInfoInputs.cache
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\obj\Debug\net8.0\TravelDataAccess.AssemblyInfo.cs
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\obj\Debug\net8.0\TravelDataAccess.csproj.CoreCompileInputs.cache
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\obj\Debug\net8.0\TravelDataAccess.dll
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\obj\Debug\net8.0\refint\TravelDataAccess.dll
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\obj\Debug\net8.0\TravelDataAccess.pdb
+E:\Sem7\PRN222\Code\SmartTravelSystem\TravelDataAccess\obj\Debug\net8.0\ref\TravelDataAccess.dll

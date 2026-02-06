@@ -1,0 +1,122 @@
+@model IEnumerable<TravelDataAccess.Models.Booking>
+
+@{
+    var isAdmin = Context.Session.GetString("CustomerRole") == "Admin";
+    ViewData["Title"] = isAdmin ? "All Bookings" : "My Bookings";
+    var filterPending = ViewBag.FilterPending ?? false;
+}
+
+<h2>@(isAdmin ? "All Bookings" : "My Bookings")</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<div class="mb-3">
+    @if (!isAdmin)
+    {
+        <a asp-action="Create" class="btn btn-primary">Create New Booking</a>
+    }
+    @if (!filterPending)
+    {
+        <a asp-action="Index" asp-route-filterPending="true" class="btn btn-info">Show Pending Only</a>
+    }
+    else
+    {
+        <a asp-action="Index" class="btn btn-secondary">Show All</a>
+    }
+</div>
+
+@if (filterPending)
+{
+    <div class="alert alert-info">
+        Showing pending bookings only
+    </div>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            @if (isAdmin)
+            {
+                <th>Customer Name</th>
+            }
+            <th>Trip Code</th>
+            <th>Destination</th>
+            <th>Price</th>
+            <th>Booking Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @if (isAdmin)
+                {
+                    <td>@item.Customer.FullName (@item.Customer.Code)</td>
+                }
+                <td>@item.Trip.Code</td>
+                <td>@item.Trip.Destination</td>
+                <td>$@item.Trip.Price.ToString("N2")</td>
+                <td>@item.BookingDate.ToString("yyyy-MM-dd")</td>
+                <td>
+                    @if (item.Status == "Pending")
+                    {
+                        <span class="badge bg-warning text-dark">@item.Status</span>
+                    }
+                    else if (item.Status == "Confirmed")
+                    {
+                        <span class="badge bg-success">@item.Status</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">@item.Status</span>
+                    }
+                </td>
+                <td>
+                    @if (item.Status == "Pending")
+                    {
+                        if (isAdmin)
+                        {
+                            <div class="btn-group">
+                                <form asp-action="Approve" asp-route-id="@item.BookingId" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                                </form>
+                                <form asp-action="Reject" asp-route-id="@item.BookingId" method="post" class="d-inline ms-1">
+                                    <button type="submit" class="btn btn-sm btn-danger">Reject</button>
+                                </form>
+                            </div>
+                        }
+                        else
+                        {
+                            <a asp-action="Cancel" asp-route-id="@item.BookingId" class="btn btn-sm btn-danger">Cancel</a>
+                        }
+                    }
+                    else
+                    {
+                        <span class="text-muted">-</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">
+        No bookings found.
+    </div>
+}

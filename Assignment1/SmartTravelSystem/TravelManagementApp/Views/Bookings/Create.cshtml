@@ -1,0 +1,36 @@
+@model TravelDataAccess.Models.Booking
+
+@{
+    ViewData["Title"] = "Create Booking";
+}
+
+<h2>Create New Booking</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="TripId" class="form-label">Trip</label>
+                <select asp-for="TripId" class="form-control" asp-items="ViewBag.TripId">
+                    <option value="">-- Select Trip --</option>
+                </select>
+                <span asp-validation-for="TripId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="BookingDate" class="form-label"></label>
+                <input asp-for="BookingDate" class="form-control" type="date" />
+                <span asp-validation-for="BookingDate" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

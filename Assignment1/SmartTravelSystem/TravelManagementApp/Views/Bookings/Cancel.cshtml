@@ -1,0 +1,38 @@
+@model TravelDataAccess.Models.Booking
+
+@{
+    ViewData["Title"] = "Cancel Booking";
+}
+
+<h2>Cancel Booking</h2>
+
+<div class="alert alert-warning" role="alert">
+    <strong>Warning:</strong> You are about to cancel this booking. This action cannot be undone.
+</div>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <dl class="row">
+            <dt class="col-sm-4">Trip</dt>
+            <dd class="col-sm-8">@Model.Trip.Code - @Model.Trip.Destination</dd>
+
+            <dt class="col-sm-4">Price</dt>
+            <dd class="col-sm-8">$@Model.Trip.Price.ToString("N2")</dd>
+
+            <dt class="col-sm-4">Booking Date</dt>
+            <dd class="col-sm-8">@Model.BookingDate.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-4">Current Status</dt>
+            <dd class="col-sm-8"><span class="badge bg-warning">@Model.Status</span></dd>
+        </dl>
+
+        <form asp-action="Cancel" method="post">
+            <input type="hidden" asp-for="BookingId" />
+            <div class="mb-3">
+                <button type="submit" class="btn btn-danger">Confirm Cancellation</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+@model TravelDataAccess.Models.Booking
+
+@{
+    ViewData["Title"] = "Update Booking Status";
+}
+
+<h2>Update Booking Status</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="BookingId" />
+            <input type="hidden" asp-for="TripId" />
+            <input type="hidden" asp-for="CustomerId" />
+            <input type="hidden" asp-for="BookingDate" />
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="mb-3">
+                <label class="form-label">Trip</label>
+                <input class="form-control" value="@Model.Trip.Code - @Model.Trip.Destination" readonly />
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Booking Date</label>
+                <input class="form-control" value="@Model.BookingDate.ToString("yyyy-MM-dd")" readonly />
+            </div>
+            
+            <div class="mb-3">
+                <label asp-for="Status" class="form-label"></label>
+                <select asp-for="Status" class="form-control">
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Update Status</button>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
