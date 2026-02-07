@@ -65,7 +65,13 @@ namespace TravelManagementApp.Controllers
                 return RedirectToAction("Index", "Login");
             }
 
-            ViewData["TripId"] = new SelectList(_context.Trips, "TripId", "Destination");
+            var trips = _context.Trips.ToList().Select(t => new
+            {
+                t.TripId,
+                DisplayText = $"{t.Code} - {t.Destination} - ${t.Price:N2}"
+            });
+
+            ViewData["TripId"] = new SelectList(trips, "TripId", "DisplayText");
             return View();
         }
 
@@ -95,7 +101,13 @@ namespace TravelManagementApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["TripId"] = new SelectList(_context.Trips, "TripId", "Destination", booking.TripId);
+            var trips = _context.Trips.ToList().Select(t => new
+            {
+                t.TripId,
+                DisplayText = $"{t.Code} - {t.Destination} - ${t.Price:N2}"
+            });
+
+            ViewData["TripId"] = new SelectList(trips, "TripId", "DisplayText", booking.TripId);
             return View(booking);
         }
 

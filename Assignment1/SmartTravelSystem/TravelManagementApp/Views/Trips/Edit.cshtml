@@ -35,11 +35,17 @@
                 </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            <div class="mb-3 d-flex justify-content-between">
+                <div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-danger" onclick="document.getElementById('deleteForm').submit();">Delete Trip</button>
+                </div>
             </div>
         </form>
+        <form id="deleteForm" asp-action="Delete" asp-route-id="@Model.TripId" method="post" onsubmit="return confirm('Are you sure you want to delete this trip?');" style="display:none;"></form>
     </div>
 </div>
 

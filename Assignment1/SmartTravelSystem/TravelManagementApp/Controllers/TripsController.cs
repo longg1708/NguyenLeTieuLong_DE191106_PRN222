@@ -152,6 +152,43 @@ namespace TravelManagementApp.Controllers
             return View(trip);
         }
 
+        // POST: Trips/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (!IsAuthenticated())
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            if (!IsAdmin())
+            {
+                TempData["ErrorMessage"] = "You do not have permission to delete trips. Admin access required.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var trip = await _context.Trips.FindAsync(id);
+            if (trip == null)
+            {
+                return NotFound();
+            }
+
+            // Check if there are any bookings for this trip before deleting
+            var hasBookings = await _context.Bookings.AnyAsync(b => b.TripId == id);
+            if (hasBookings)
+            {
+                TempData["ErrorMessage"] = "Cannot delete trip because it has associated bookings.";
+                return RedirectToAction(nameof(Edit), new { id = id });
+            }
+
+            _context.Trips.Remove(trip);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Trip deleted successfully.";
+
+            return RedirectToAction(nameof(Index));
+        }
+
         private bool TripExists(int id)
         {
             return _context.Trips.Any(e => e.TripId == id);
