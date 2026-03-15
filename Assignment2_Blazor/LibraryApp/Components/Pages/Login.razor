@@ -1,0 +1,48 @@
+﻿@page "/login"
+@using GalleryDataAccess
+@inject IUserService UserService
+@inject ISessionService SessionService
+@inject IJSRuntime JS
+@rendermode InteractiveServer
+
+<h3>Login</h3>
+
+<div class="simple-form" style="margin-top:1rem">
+    <label>Email</label>
+    <input @bind="email" placeholder="" />
+
+    <label>Password</label>
+    <input type="password" @bind="password" />
+
+    @if (!string.IsNullOrEmpty(error))
+    {
+        <div class="msg err">@error</div>
+    }
+
+    <button class="btn-plain primary" @onclick="HandleLogin" disabled="@loading">
+        @(loading ? "..." : "Login")
+    </button>
+</div>
+
+@code {
+    string email = "", password = "", error = "";
+    bool loading;
+
+    async Task HandleLogin()
+    {
+        error = ""; loading = true;
+        try
+        {
+            var user = await UserService.LoginAsync(email, password);
+            if (user == null) { error = "Invalid email or password."; return; }
+
+            var sid = await SessionService.CreateSessionAsync(user.Id, user.Role);
+            await JS.InvokeVoidAsync("eval",
+                $"document.cookie='SessionID={sid};path=/;max-age=7200;SameSite=Lax'");
+            var redirect = user.Role == "Admin" ? "/manage-books" : "/search";
+            await JS.InvokeVoidAsync("eval", $"window.location.href='{redirect}'");
+        }
+        catch (Exception ex) { error = ex.Message; }
+        finally { loading = false; }
+    }
+}

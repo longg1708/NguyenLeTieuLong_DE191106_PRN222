@@ -1,0 +1,17 @@
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\bin\Debug\net8.0\GalleryDataAccess.deps.json
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\bin\Debug\net8.0\GalleryDataAccess.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\bin\Debug\net8.0\GalleryDataAccess.pdb
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\bin\Debug\net8.0\GalleryBusiness.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\bin\Debug\net8.0\GalleryRepositories.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\bin\Debug\net8.0\GalleryRepositories.pdb
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\bin\Debug\net8.0\GalleryBusiness.pdb
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\GalleryDataAccess.csproj.AssemblyReference.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\GalleryDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\GalleryDataAccess.AssemblyInfoInputs.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\GalleryDataAccess.AssemblyInfo.cs
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\GalleryDataAccess.csproj.CoreCompileInputs.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\GalleryD.288A7940.Up2Date
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\GalleryDataAccess.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\refint\GalleryDataAccess.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\GalleryDataAccess.pdb
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryDataAccess\obj\Debug\net8.0\ref\GalleryDataAccess.dll

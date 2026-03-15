@@ -1,0 +1,59 @@
+﻿@page "/borrow-status"
+@using GalleryBusiness.Models
+@using GalleryDataAccess
+@inject IBorrowService BorrowService
+@inject ISessionService SessionService
+@inject IHttpContextAccessor HttpContextAccessor
+@inject NavigationManager Nav
+@rendermode InteractiveServer
+
+<h3>Borrow Status</h3>
+
+@if (records == null)
+{
+    <p>Loading...</p>
+}
+else if (!records.Any())
+{
+    <div class="msg info">No borrow records found.</div>
+}
+else
+{
+    <table class="plain-table">
+        <thead>
+            <tr><th>Student</th><th>Book</th><th>Borrow Date</th><th>Due Date</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var r in records)
+            {
+                <tr>
+                    <td>@r.User?.FullName</td>
+                    <td>@r.Book?.Title</td>
+                    <td>@r.BorrowDate?.ToString("dd/MM/yyyy")</td>
+                    <td>@r.DueDate.ToString("dd/MM/yyyy")</td>
+                    <td>@Status(r)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<BorrowRecord>? records;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var cookie = HttpContextAccessor.HttpContext?.Request.Cookies["SessionID"];
+        if (string.IsNullOrEmpty(cookie)) { Nav.NavigateTo("/login", true); return; }
+        var session = await SessionService.GetSessionAsync(cookie);
+        if (session == null || session.Role != "Admin") { Nav.NavigateTo("/login", true); return; }
+        records = await BorrowService.GetAllRecordsAsync();
+    }
+
+    string Status(BorrowRecord r)
+    {
+        if (r.Returned == true) return "Returned";
+        if (r.DueDate < DateTime.Now) return "Overdue";
+        return "Borrowing";
+    }
+}

@@ -1,0 +1,69 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LibraryApp
+build_property.RootNamespace = LibraryApp
+build_property.ProjectDir = E:\Sem7\PRN222\Code\Assignment2_Blazor\LibraryApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\Sem7\PRN222\Code\Assignment2_Blazor\LibraryApp
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Pages/BorrowStatus.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb3Jyb3dTdGF0dXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Pages/ManageBooks.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNYW5hZ2VCb29rcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Pages/MyBorrows.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNeUJvcnJvd3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Pages/SearchBooks.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2hCb29rcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sem7/PRN222/Code/Assignment2_Blazor/LibraryApp/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-wci31745fb

@@ -1,0 +1,55 @@
+﻿@using GalleryDataAccess
+@inject ISessionService SessionService
+@inject IHttpContextAccessor HttpContextAccessor
+@inject IJSRuntime JS
+@rendermode InteractiveServer
+
+<nav class="nav-top">
+    <a class="brand" href="/">GalleryWebApp</a>
+    <a href="/">Home</a>
+
+    @if (role == "Admin")
+    {
+        <a href="/manage-books">Manage Books (Admin)</a>
+        <a href="/borrow-status">Borrow Status</a>
+    }
+    @if (role == "Student")
+    {
+        <a href="/search">Search &amp; Borrow (Student)</a>
+        <a href="/my-borrows">My Borrows</a>
+    }
+
+    <span style="flex:1"></span>
+
+    @if (!string.IsNullOrEmpty(role))
+    {
+        <button class="nav-btn" @onclick="Logout">Logout</button>
+    }
+    else
+    {
+        <a href="/login">Login</a>
+    }
+</nav>
+
+@code {
+    string role = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var cookie = HttpContextAccessor.HttpContext?.Request.Cookies["SessionID"];
+        if (!string.IsNullOrEmpty(cookie))
+        {
+            var session = await SessionService.GetSessionAsync(cookie);
+            if (session != null) role = session.Role;
+        }
+    }
+
+    async Task Logout()
+    {
+        var cookie = HttpContextAccessor.HttpContext?.Request.Cookies["SessionID"];
+        if (!string.IsNullOrEmpty(cookie))
+            await SessionService.DeleteSessionAsync(cookie);
+        await JS.InvokeVoidAsync("eval",
+            "document.cookie='SessionID=;path=/;max-age=0';window.location.href='/login'");
+    }
+}

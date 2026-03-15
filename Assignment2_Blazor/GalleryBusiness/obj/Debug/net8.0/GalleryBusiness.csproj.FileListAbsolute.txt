@@ -1,0 +1,14 @@
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\bin\Debug\net8.0\GalleryBusiness.deps.json
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\bin\Debug\net8.0\GalleryBusiness.runtimeconfig.json
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\bin\Debug\net8.0\GalleryBusiness.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\bin\Debug\net8.0\GalleryBusiness.pdb
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\GalleryBusiness.csproj.AssemblyReference.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\GalleryBusiness.GeneratedMSBuildEditorConfig.editorconfig
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\GalleryBusiness.AssemblyInfoInputs.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\GalleryBusiness.AssemblyInfo.cs
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\GalleryBusiness.csproj.CoreCompileInputs.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\GalleryBusiness.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\refint\GalleryBusiness.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\GalleryBusiness.pdb
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\GalleryBusiness.genruntimeconfig.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryBusiness\obj\Debug\net8.0\ref\GalleryBusiness.dll

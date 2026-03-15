@@ -1,0 +1,86 @@
+﻿@page "/search"
+@using GalleryBusiness.Models
+@using GalleryDataAccess
+@inject IBookService BookService
+@inject IBorrowService BorrowService
+@inject ISessionService SessionService
+@inject IHttpContextAccessor HttpContextAccessor
+@inject NavigationManager Nav
+@rendermode InteractiveServer
+
+<h3>Book List</h3>
+
+<div class="search-bar">
+    <input @bind="keyword" placeholder="Search by title, author or category..." />
+    <button class="btn-plain" @onclick="Search">Search</button>
+</div>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="msg @(ok ? "ok" : "err")">@message</div>
+}
+
+@if (books == null)
+{
+    <p>Loading...</p>
+}
+else if (!books.Any())
+{
+    <div class="msg info">No books found.</div>
+}
+else
+{
+    <table class="plain-table">
+        <thead>
+            <tr><th>Title</th><th>Author</th><th>Category</th><th>ISBN</th><th>Qty</th><th></th></tr>
+        </thead>
+        <tbody>
+            @foreach (var b in books)
+            {
+                <tr>
+                    <td>@b.Title</td>
+                    <td>@b.Author</td>
+                    <td>@b.Category</td>
+                    <td>@b.Isbn</td>
+                    <td><span class="qty-badge @(b.Quantity == 0 ? "zero" : "")">@b.Quantity</span></td>
+                    <td>
+                        @if (b.Quantity > 0 && userId > 0)
+                        {
+                            <button class="link-action" @onclick="() => Borrow(b.Id)">Borrow</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<Book>? books;
+    string keyword = "", message = "";
+    bool ok;
+    int userId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var cookie = HttpContextAccessor.HttpContext?.Request.Cookies["SessionID"];
+        if (string.IsNullOrEmpty(cookie)) { Nav.NavigateTo("/login", true); return; }
+        var session = await SessionService.GetSessionAsync(cookie);
+        if (session == null || session.Role != "Student") { Nav.NavigateTo("/login", true); return; }
+        userId = session.UserId;
+        books = await BookService.GetAllAsync();
+    }
+
+    async Task Search()
+    {
+        message = "";
+        books = await BookService.SearchAsync(keyword);
+    }
+
+    async Task Borrow(int bookId)
+    {
+        var (s, m) = await BorrowService.BorrowBookAsync(userId, bookId);
+        ok = s; message = m;
+        books = await BookService.SearchAsync(keyword);
+    }
+}

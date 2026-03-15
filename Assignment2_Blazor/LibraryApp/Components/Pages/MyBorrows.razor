@@ -1,0 +1,80 @@
+﻿@page "/my-borrows"
+@using GalleryBusiness.Models
+@using GalleryDataAccess
+@inject IBorrowService BorrowService
+@inject ISessionService SessionService
+@inject IHttpContextAccessor HttpContextAccessor
+@inject NavigationManager Nav
+@rendermode InteractiveServer
+
+<h3>My Borrowed Books</h3>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="msg @(ok ? "ok" : "err")">@message</div>
+}
+
+@if (records == null)
+{
+    <p>Loading...</p>
+}
+else if (!records.Any())
+{
+    <div class="msg info">You have not borrowed any books.</div>
+}
+else
+{
+    <table class="plain-table">
+        <thead>
+            <tr><th>Book Title</th><th>Borrow Date</th><th>Due Date</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody>
+            @foreach (var r in records)
+            {
+                <tr>
+                    <td>@r.Book?.Title</td>
+                    <td>@r.BorrowDate?.ToString("dd/MM/yyyy")</td>
+                    <td>@r.DueDate.ToString("dd/MM/yyyy")</td>
+                    <td>@Status(r)</td>
+                    <td>
+                        @if (r.Returned == false)
+                        {
+                            <button class="link-action" @onclick="() => Return(r.Id)">Return</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<BorrowRecord>? records;
+    string message = "";
+    bool ok;
+    int userId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var cookie = HttpContextAccessor.HttpContext?.Request.Cookies["SessionID"];
+        if (string.IsNullOrEmpty(cookie)) { Nav.NavigateTo("/login", true); return; }
+        var session = await SessionService.GetSessionAsync(cookie);
+        if (session == null || session.Role != "Student") { Nav.NavigateTo("/login", true); return; }
+        userId = session.UserId;
+        records = await BorrowService.GetMyBorrowsAsync(userId);
+    }
+
+    string Status(BorrowRecord r)
+    {
+        if (r.Returned == true) return "Returned";
+        if (r.DueDate < DateTime.Now) return "Overdue";
+        return "Borrowing";
+    }
+
+    async Task Return(int recordId)
+    {
+        var (s, m) = await BorrowService.ReturnBookAsync(recordId);
+        ok = s; message = m;
+        records = await BorrowService.GetMyBorrowsAsync(userId);
+    }
+}

@@ -1,0 +1,15 @@
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\bin\Debug\net8.0\GalleryRepositories.deps.json
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\bin\Debug\net8.0\GalleryRepositories.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\bin\Debug\net8.0\GalleryRepositories.pdb
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\bin\Debug\net8.0\GalleryBusiness.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\bin\Debug\net8.0\GalleryBusiness.pdb
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\GalleryRepositories.csproj.AssemblyReference.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\GalleryRepositories.GeneratedMSBuildEditorConfig.editorconfig
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\GalleryRepositories.AssemblyInfoInputs.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\GalleryRepositories.AssemblyInfo.cs
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\GalleryRepositories.csproj.CoreCompileInputs.cache
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\GalleryR.3B8E7E3A.Up2Date
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\GalleryRepositories.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\refint\GalleryRepositories.dll
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\GalleryRepositories.pdb
+E:\Sem7\PRN222\Code\Assignment2_Blazor\GalleryRepositories\obj\Debug\net8.0\ref\GalleryRepositories.dll

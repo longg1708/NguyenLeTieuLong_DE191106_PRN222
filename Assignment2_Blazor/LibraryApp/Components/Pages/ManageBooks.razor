@@ -1,0 +1,131 @@
+﻿@page "/manage-books"
+@using GalleryBusiness.Models
+@using GalleryDataAccess
+@inject IBookService BookService
+@inject ISessionService SessionService
+@inject IHttpContextAccessor HttpContextAccessor
+@inject NavigationManager Nav
+@rendermode InteractiveServer
+
+<h3>Book List</h3>
+
+@if (!showForm)
+{
+    <a class="link-action" href="javascript:void(0)" @onclick="OpenCreate"
+       style="display:inline-block;margin-bottom:0.75rem">Create New Book</a>
+}
+
+@if (!string.IsNullOrEmpty(pageMsg))
+{
+    <div class="msg @(pageOk ? "ok" : "err")">@pageMsg</div>
+}
+
+@if (showForm)
+{
+    <div class="simple-form" style="margin-bottom:1rem">
+        <h5 style="margin:0 0 0.75rem">@(editing.Id == 0 ? "Create Book" : "Edit Book")</h5>
+        <label>Title</label><input @bind="editing.Title" />
+        <label>Author</label><input @bind="editing.Author" />
+        <label>Category</label><input @bind="editing.Category" />
+        <label>ISBN</label><input @bind="editing.Isbn" />
+        <label>Quantity</label><input type="number" @bind="editing.Quantity" />
+
+        @if (!string.IsNullOrEmpty(formMsg))
+        {
+            <div class="msg err">@formMsg</div>
+        }
+
+        <div style="display:flex;gap:0.5rem;margin-top:0.25rem">
+            <button class="btn-plain primary" @onclick="Save">
+                @(editing.Id == 0 ? "Create" : "Save Changes")
+            </button>
+            <button class="btn-plain" @onclick="Cancel">Cancel</button>
+        </div>
+    </div>
+}
+
+@if (books == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="plain-table">
+        <thead>
+            <tr><th>Title</th><th>Author</th><th>Category</th><th>ISBN</th><th>Qty</th><th></th></tr>
+        </thead>
+        <tbody>
+            @foreach (var b in books)
+            {
+                <tr>
+                    <td>@b.Title</td>
+                    <td>@b.Author</td>
+                    <td>@b.Category</td>
+                    <td>@b.Isbn</td>
+                    <td>@b.Quantity</td>
+                    <td style="white-space:nowrap">
+                        <button class="link-action" @onclick="() => OpenEdit(b)">Edit</button>
+                        &nbsp;
+                        <button class="link-action" style="color:#dc3545"
+                                @onclick="() => Delete(b.Id)">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<Book>? books;
+    Book editing = new();
+    bool showForm;
+    string formMsg = "", pageMsg = "";
+    bool pageOk;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var cookie = HttpContextAccessor.HttpContext?.Request.Cookies["SessionID"];
+        if (string.IsNullOrEmpty(cookie)) { Nav.NavigateTo("/login", true); return; }
+        var session = await SessionService.GetSessionAsync(cookie);
+        if (session == null || session.Role != "Admin") { Nav.NavigateTo("/login", true); return; }
+        books = await BookService.GetAllAsync();
+    }
+
+    void OpenCreate() { editing = new Book(); formMsg = ""; showForm = true; }
+
+    void OpenEdit(Book b)
+    {
+        editing = new Book
+        {
+            Id = b.Id,
+            Title = b.Title,
+            Author = b.Author,
+            Category = b.Category,
+            Isbn = b.Isbn,
+            Quantity = b.Quantity,
+            CreatedAt = b.CreatedAt
+        };
+        formMsg = ""; showForm = true;
+    }
+
+    void Cancel() { showForm = false; formMsg = ""; }
+
+    async Task Save()
+    {
+        var (s, m) = editing.Id == 0
+            ? await BookService.AddBookAsync(editing)
+            : await BookService.UpdateBookAsync(editing);
+        if (!s) { formMsg = m; return; }
+        showForm = false; pageOk = true; pageMsg = m;
+        books = await BookService.GetAllAsync();
+    }
+
+    async Task Delete(int id)
+    {
+        var (s, m) = await BookService.DeleteBookAsync(id);
+        pageOk = s; pageMsg = m;
+        if (s) books = await BookService.GetAllAsync();
+    }
+}
